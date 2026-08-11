@@ -1,0 +1,11 @@
+x = input("Enter a number: ")
+y = input("Enter another number: ")
+x = float(x)
+y = float(y)
+print(f"The sum of {x} and {y} is {x + y}")
+print(f"The difference of {x} and {y} is {x - y}")
+print(f"The product of {x} and {y} is {x * y}")
+print(f"The quotient of {x} and {y} is {x / y}")
+#and we can also use int() and float() to convert the input to the desired data type
+#x = float(input("Enter a number: "))
+#y = float(input("Enter another number: "))
