@@ -1,0 +1,5 @@
+name = input("Enter your name:")
+Target_Specialty = input("Enter Your Target Specialty:")
+Studay = int(input("Enter your hours per week available for study:"))
+age = int(input("Enter your age:"))
+print(f"Your profile is {name} and {age} years old.\nYour target specialty is {Target_Specialty}.\nYou have {Studay} hours per week available for study.")
