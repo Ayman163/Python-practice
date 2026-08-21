@@ -7,9 +7,9 @@ gender = input("What is your gender? ")
 
 years_of_experience = int(input("How many years of experience do you have? "))
 
-knows_sql = input("Do you know SQL? ")
+knows_sql = input("Do you know SQL? ").strip().lower()
 
-knows_git = input("Do you know Git? ")
+knows_git = input("Do you know Git? ").strip().lower()
 
 if years_of_experience >= 5 and knows_sql == "Yes" and knows_git == "Yes":
     print("Your job title is:Senior Developer")
