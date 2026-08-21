@@ -12,8 +12,9 @@ elif choice == "-":
 elif choice == "*":
     print(number1 * number2)
 elif choice == "/":
-    print(number1 / number2)
     if number2 == 0:
         print("Error: Division by zero is not allowed!")
+    else:
+        print(number1 / number2)
 else:
     print("Invalid operation")
