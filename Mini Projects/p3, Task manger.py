@@ -1,5 +1,5 @@
+task = []
 while True :
-    task = []
     print("--------------------------------------------------------------------------------")
     print("Welcome to the task manager")
     print("Enter your choice")
