@@ -10,7 +10,8 @@ while True :
     print("--------------------------------------------------------------------------------")
     choice = int(input("Enter your choice: "))
     if choice == 1:
-        task.append(input("Enter the task name: "))
+        new_task = input("Enter the task name: ")
+        tasks.append(new_task)
     elif choice == 2:
         print("Task List")
         for i in range(len(task)):
