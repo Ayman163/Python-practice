@@ -7,3 +7,7 @@ raw_labels = ["car", "truck", "car", "bus", "person", "bus"]
 unique_labels = set(raw_labels)
 
 print(unique_labels)  # {'car', 'truck', 'bus', 'person'}
+
+#in set we use .add() not .append()
+
+unique_labels.add("motorcycle")
