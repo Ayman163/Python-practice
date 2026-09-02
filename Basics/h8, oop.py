@@ -13,3 +13,7 @@ class TrafficCamera:
 cam_1 = TrafficCamera("1080", 30)
 
 cam_1.capture_video()
+
+cam_1.is_active = False
+
+cam_1.capture_video()
