@@ -11,3 +11,5 @@ class TrafficCamera:
             print("The camera is currently not working.")
 
 cam_1 = TrafficCamera("1080", 30)
+
+cam_1.capture_video()
