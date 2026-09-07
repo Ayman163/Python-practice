@@ -1,4 +1,6 @@
+import json 
 
+class TrafficCamera:
     def __init__(self, resolution, fps):
         self.resolution = resolution
         self.fps = fps
