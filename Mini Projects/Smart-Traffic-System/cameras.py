@@ -51,3 +51,10 @@ class SpeedCamera(TrafficCamera):
 
         except TypeError:
             print("Error: Invalid speed data received. Speed must be a number!")
+
+    def check_multiple_speeds(self, *speeds):
+
+        print(f"--- Processing a batch of {len(speeds)} vehicles---")
+
+        for speed in speeds:
+            self.check_speed(speed)
