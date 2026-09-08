@@ -21,7 +21,7 @@ class SpeedCamera(TrafficCamera):
         super().__init__(resolution, fps)
         self.speed_limit = speed_limit
 
-    def check_speed(self, vehicle_speed):
+    def check_speed(self, vehicle_speed, **details):
         try:
             if not self._is_active:
                 print("The radar is currently out of service.")
@@ -34,6 +34,8 @@ class SpeedCamera(TrafficCamera):
                     "speed_detected": vehicle_speed,
                     "road_limit": self.speed_limit
                 }
+
+                violation_entry.update(details)
                 
                 try:
                     with open("violations.json", "r") as file:
