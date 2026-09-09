@@ -1,4 +1,5 @@
 import json 
+import sqlite3
 
 class TrafficCamera:
     def __init__(self, resolution, fps):
@@ -22,6 +23,9 @@ class SpeedCamera(TrafficCamera):
         self.speed_limit = speed_limit
 
     def check_speed(self, vehicle_speed, **details):
+
+        
+
         try:
             if not self._is_active:
                 print("The radar is currently out of service.")
@@ -36,17 +40,14 @@ class SpeedCamera(TrafficCamera):
                 }
 
                 violation_entry.update(details)
+
+                conn = sqlite3.connect("traffic_system.db")
+                cursor = conn.cursor()
                 
-                try:
-                    with open("violations.json", "r") as file:
-                        all_violations = json.load(file)
-                except (FileNotFoundError, json.JSONDecodeError):
-                    all_violations = [] 
-                
-                all_violations.append(violation_entry)
-                
-                with open("violations.json", "w") as file:
-                    json.dump(all_violations, file, indent=4)
+                cursor.execute("INSERT INTO violations (speed, speed_limit) VALUES (?, ?)", (vehicle_speed, self.speed_limit))
+                conn.commit()
+                conn.close()
+                print("Violation recorded successfully in SQL Database!")
                     
             else:
                 print(f"A car passing at a safe speed: {vehicle_speed} km/h.")
