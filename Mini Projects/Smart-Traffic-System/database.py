@@ -21,3 +21,11 @@ def add_violations(speed, speed_limit):
     rows = cursor.fetchall()
     conn.close()
     return rows
+
+def get_violations():
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM violations")
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
